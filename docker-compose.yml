@@ -1,0 +1,37 @@
+version: '3'
+networks:
+  mynet:
+services:
+  web:
+    privileged: true
+    restart: always
+    image: richarvey/nginx-php-fpm:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./www:/var/www/html/app
+    networks:
+      - mynet
+    environment:
+      - DB_DRIVER=mysql
+      - DBNAME=twitter
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWD=root
+  db:
+    privileged: true
+    image: mariadb
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: twitter
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    networks:
+      - mynet
+    volumes:
+      - ./init.sql:/var/www/html/init.sql
+    command: --init-file /var/www/html/init.sql
