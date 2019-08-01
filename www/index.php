@@ -12,10 +12,10 @@ if (count($strings) > 1) {
 }
 
 $settings = array(
-    'oauth_access_token' => "17870597-RWlWxCTro84XvzzeeoMW40z2f5oSCzyc7AEMH4zkt",
-    'oauth_access_token_secret' => "vaJPYUFpi4Q54LAmnYwtn2KBKXfB9zsVGZPp6DiS90Jao",
-    'consumer_key' => "vS5z8BIa9LCBBud1jKDQfz0SL",
-    'consumer_secret' => "GwUmxoH1XPxYzq2fhfL6dFdmhjoUHBjvLDbKTJRQEBHNUgzyEc"
+    'oauth_access_token' => "",
+    'oauth_access_token_secret' => "",
+    'consumer_key' => "",
+    'consumer_secret' => ""
 );
 
 $url = "https://api.twitter.com/1.1/search/tweets.json";
